@@ -3,7 +3,7 @@
 **Pre-requisite:** Beginner/Intermediate Programming knowledge (functions, keywords, list, data types, loops, etc.,)
 
 I have created this to be consistent in my Elixir lesson
-Feel free to create a fork.
+Feel free to fork.
 
 **Free Resources:**
 1) From Elixir Official Site: https://hexdocs.pm/elixir/introduction.html
