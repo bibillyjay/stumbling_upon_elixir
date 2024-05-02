@@ -1,0 +1,208 @@
+<!-- livebook:{"persist_outputs":true} -->
+
+# Learning_Elixir
+
+## Data Types
+
+Noting down the datatypes that need more effort to remember or not simple in its existence like float
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## Float
+
+Here let's take an example float value 1200
+
+Though 1200.0 is directly entered and while evaluating this, the system returns 1200.0 
+But the system stores this value in scientific form like this 1.2e3
+
+ONLY when
+":erlang.float_to_binary(1200.0, decimals: 2)" OR
+":erlang.float_to_binary(1200.0, [{:decimals, 2}])"
+
+The float value is stored as the same value as we stored
+
+```elixir
+# Entering a float value
+1200.0
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+1200.0
+```
+
+```elixir
+# to_string(float()) Returns a binary which corresponds to the shortest text representation of the given float.
+Float.to_string(1200.0)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"1.2e3"
+```
+
+```elixir
+# Assigning a float value and printing it using IO.puts()
+f = 1200.0
+IO.puts(f)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+1.2e3
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+:ok
+```
+
+```elixir
+# Keyword List method 
+:erlang.float_to_binary(1200.0, decimals: 2)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"1200.00"
+```
+
+```elixir
+# Tuples with Atom
+:erlang.float_to_binary(1200.0, [{:decimals, 2}])
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"1200.00"
+```
+
+<!-- livebook:{"branch_parent_index":0} -->
+
+## String
+
+This section is for String Operations. Points to remember in Elixir
+
+1. Strings in Elixir are binaries
+2. enclosed in single quotes are '' are characters
+3. enclosed in single quotes are "" are strings
+4. Strings can be changed to Characters and vice versa
+5. Interpolation format in Elixir #{}
+
+```elixir
+# In Elixir Characters represent Unicode code point
+# Here, ~c"abcd" means the char list [97, 98, 99, 100], which corresponds to the Unicode code points of the lowercase letters 'a', 'b', 'c', and 'd'.
+list_of_bytes = <<97, 98, 99, 100>>
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"abcd"
+```
+
+```elixir
+list_of_bytes == "abcd"
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+```elixir
+string_1 = ~c"alphabets"
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+~c"alphabets"
+```
+
+```elixir
+string_2 = "alphabets"
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"alphabets"
+```
+
+```elixir
+# Interpolation
+name = "Min Yoongi"
+"Hello #{name}"
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"Hello Min Yoongi"
+```
+
+```elixir
+# List of code points created with single quotes ''
+a = ~c"Climatic Crisis is real"
+is_list(a)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+```elixir
+# Converrting a char list to a string
+a = ~c"hello this is jay"
+Kernel.to_string(a)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"hello this is jay"
+```
+
+```elixir
+# Converrting a string to a char list
+a = "sending good luck charm"
+Kernel.to_charlist(a)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+~c"sending good luck charm"
+```
+
+```elixir
+a = ~c"converting this to a string"
+to_string(a)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"converting this to a string"
+```
+
+```elixir
+b = "converting this to a char list"
+to_charlist(b)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+~c"converting this to a char list"
+```
