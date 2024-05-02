@@ -1,4 +1,4 @@
-Step by step learning of Elixir
+Step by step Elixir learning
 
 Pre-requisite: Beginner/Intermediate Programming knowledge (functions, keywords, list, data types, loops, etc.,)
 I have created this to be consistent in my Elixir lesson
