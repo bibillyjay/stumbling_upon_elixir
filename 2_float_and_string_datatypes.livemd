@@ -2,7 +2,7 @@
 
 # Learning_Elixir
 
-## Data Types
+## Built-in Data Types (Floating, Charlist & String)
 
 Noting down the datatypes that need more effort to remember or not simple in its existence like float
 
